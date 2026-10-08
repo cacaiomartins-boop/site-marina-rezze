@@ -1,5 +1,4 @@
 import { clinic } from "../data/clinic";
-import { Sparkle } from "./Icons";
 
 export default function Approach() {
   const d = clinic.approach;
@@ -23,13 +22,8 @@ export default function Approach() {
           <div className="lg:col-span-5 reveal-item">
             <div className="max-w-[380px] mx-auto lg:ml-auto">
               <div className="relative">
-                {/* decoração rosa atrás da foto */}
-                <div className="absolute -top-8 -left-6 w-44 h-44 rounded-full bg-blush-deep" />
-                <div className="absolute -top-12 -left-10 w-52 h-52 rounded-full border border-rose" />
-                <div className="absolute -top-5 -right-5 w-24 h-24 dots-rose" />
+                {/* detalhe simples atrás da foto: só uma moldura fina deslocada */}
                 <div className="absolute -bottom-4 -right-4 w-full h-full rounded-[28px] border border-rose pointer-events-none" />
-                <Sparkle className="absolute -bottom-6 -left-3 w-8 h-8 text-rose z-20" />
-                <Sparkle className="absolute top-1/3 -right-3 w-5 h-5 text-rose z-20" />
                 <div className="relative rounded-[28px] overflow-hidden border border-rose/40 bg-linen shadow-soft">
                 <img
                   src={clinic.images.approach}
