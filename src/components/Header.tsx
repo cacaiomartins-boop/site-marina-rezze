@@ -30,7 +30,7 @@ export default function Header() {
             {clinic.name}
           </span>
           <span className="block text-[11px] uppercase tracking-label font-medium opacity-80 mt-0.5">
-            Psicanálise · {clinic.crp}
+            Psicóloga Psicanalista · {clinic.crp}
           </span>
         </a>
 
