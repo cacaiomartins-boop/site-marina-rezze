@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f0eb;
+  color: #2b362d;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.font-fraunces {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.015em;
+}
+
+.prose-editorial p {
+  max-width: 62ch;
+}
+
+.section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+/* detalhe rosa: pequeno traço antes do rótulo das seções */
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: #e6a9b7;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* destaque rosa suave embaixo das palavras em itálico dos títulos */
+.hl {
+  background-image: linear-gradient(transparent 62%, #f2c2cc 62%, #f2c2cc 92%, transparent 92%);
+  padding: 0 0.12em;
+}
+
+/* Animação de entrada (segura: só esconde depois que o JS marca reveal-ready) */
+html.reveal-ready .reveal-item {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+html.reveal-ready .reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-ready .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-img-zoom {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.hero-img-zoom {
+  transform: scale(1.06);
+  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero-loaded .hero-img-zoom {
+  transform: scale(1);
+}
+
+@media (min-width: 1024px) {
+  .sticky-editorial {
+    position: sticky;
+    top: 112px;
+  }
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+  .testimonial-col-stagger {
+    margin-top: 40px;
+  }
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+/* pontinhos rosa decorativos (atrás das fotos) */
+.dots-rose {
+  background-image: radial-gradient(#e6a9b7 1.8px, transparent 2px);
+  background-size: 14px 14px;
+}
