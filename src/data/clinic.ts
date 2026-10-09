@@ -1,22 +1,18 @@
-// Todos os textos, preços, links e imagens do site ficam aqui.
+// Textos, links e imagens do site ficam aqui.
 // Para editar o site, mexa só neste arquivo.
 
 export const clinic = {
   name: "Marina Rezze Barthelson",
-  shortTitle: "Psicóloga · Psicanalista",
   role: "Psicóloga Clínica & Psicanalista",
   crp: "CRP 06/73918",
-  city: "Campinas - SP",
   neighborhood: "Jardim Brasil",
   street: "Rua Clóvis Beviláqua, 185",
   room: "Sala 11",
   building: "Edifício Gemini I",
   postalCode: "13073-021",
   phone: "(19) 99126-0365",
-  // Número do WhatsApp (só dígitos, com 55 + DDD). Usado em todos os botões "Agendar".
-  whatsapp: "5519991260365",
-  whatsappMessage:
-    "Olá, Marina! Vim pelo site e gostaria de agendar uma consulta.",
+  phoneTel: "+5519991260365",
+  siteUrl: "https://www.marinarezze.com.br",
   rating: "5.0",
   reviewCount: 5,
   mapsLink:
@@ -26,18 +22,13 @@ export const clinic = {
   // Todos os botões "Agendar" abrem este link (perfil da Marina no Doctoralia)
   bookingUrl:
     "https://www.doctoralia.com.br/marina-rezze-barthelson/psicologo-psicanalista/campinas#address-id=1820418&is-online-only=true&filters%5Bspecializations%5D%5B%5D=75&filters%5Bonline_only%5D%5B%5D=true",
-  links: {
-    doctoralia: "",
-    instagram: "",
-    youtube: "",
-  },
 
   // Imagens: para trocar por fotos originais, coloque os arquivos em public/img/
   // e troque aqui por "/img/nome-do-arquivo.jpg"
   images: {
-    hero: "https://lh3.googleusercontent.com/aida-public/AB6AXuBnPISxjZBgZYrNSR3Nydr_oDWypmC1eugcAbtZknVQVOw_roAggvybxZNChHImth-V_fii2FVwMboqImzUIDDuFec-Urp-Wn78muU_LpmoYRNfPTCkL18DhN66MPS1zo88b54RWkXSINdx1HxignJDXQCWeirWrVCGccQckgHoXCBM6nDTDlr70VT4Dp3nCUzMOZTvQ-QM5ysan1YFH-3ka6iutTLcx-W5KoOfgK3vCtMKtopMYg_y",
-    portrait: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz-jVnPmlT_pjA5fVA_Tp8DFBbu65nCNW92EpQgtqtRDnHMsqIpD6pdhjwBerBbsLhAAnMoqrtfwKV3QQkXiLuVOOTjc24lfdi_mhFi4Z_f_fdGYiT9twJcaXyJ3W_Udciyu-PYmpP9jdIyA9w1n9_xv7VMS70SpZ8RNqP0szFjHtHTRTge1icxyKcYv2VhZMXPqqlzzXezB9JCurvjhbRlPJHrz3w5YRVYqfh-w4X9lApByB1ea61",
-    approach: "https://lh3.googleusercontent.com/aida-public/AB6AXuCkY3hkfEVuEXz20IrR7saBzCXj4ryytdV7MIrfPh_EQaLatfSZVBYdmTCTOFu6ojDMSB4Upu295ah52E6IikIRL5sbOLufimsHXc4B_CX_6liBK6X7Syl6mainJe9Gv_5tS7wk_y8U5ISCiCq-VvICL4nzb3lwPWfmScJNZ-UFMv15Tn061zNyn7GBRnl7Py2a1qzl-egI1DHLyUTpTth3M85bQ6OmqOFJ4D4mUI0vvzd_VK1MAVVI",
+    hero: "/img/hero.webp",
+    portrait: "/img/retrato.webp",
+    approach: "/img/abordagem.webp",
   },
 
   nav: [

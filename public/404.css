@@ -1,0 +1,11 @@
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f5f2ea;color:#2b362d;font-family:"Inter",system-ui,sans-serif;line-height:1.7;padding:24px}
+main{max-width:520px;text-align:center}
+.brand{font-family:"Fraunces",Georgia,serif;font-size:1.25rem;letter-spacing:-.015em;margin:0 0 40px}
+.code{font-family:"Fraunces",Georgia,serif;font-size:5rem;line-height:1;color:#a9b98f;margin:0}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:300;font-size:2rem;line-height:1.2;margin:12px 0 16px}
+p{color:#566b50;margin:0 0 32px}
+a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;border-radius:9999px;background:#4f6652;color:#fcf9f6;text-decoration:none;font-weight:500;font-size:15px;transition:background-color .3s ease,transform .3s ease}
+a.btn:hover{background:#566b50;transform:translateY(-2px)}
+a.btn:focus-visible{outline:2px solid #2b362d;outline-offset:2px;box-shadow:0 0 0 5px rgba(255,255,255,.85)}
+@media (prefers-reduced-motion:reduce){a.btn{transition:none}a.btn:hover{transform:none}}

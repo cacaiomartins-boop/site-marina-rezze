@@ -1,5 +1,5 @@
 import { clinic } from "../data/clinic";
-import { openBooking } from "../lib/booking";
+import BookingLink from "./BookingLink";
 
 export default function Faq() {
   const d = clinic.faq;
@@ -16,13 +16,9 @@ export default function Faq() {
                 <span className="italic text-rust font-light hl">{d.titleEmphasis}</span>
               </h2>
               <p className="text-moss text-base md:text-lg mb-8">{d.text}</p>
-              <button
-                type="button"
-                onClick={openBooking}
-                className="h-[52px] px-8 rounded-full border border-forest text-forest font-medium text-[15px] hover:bg-forest hover:text-paper transition-colors"
-              >
+              <BookingLink className="h-[52px] px-8 rounded-full border border-forest text-forest font-medium text-[15px] hover:bg-forest hover:text-paper transition-colors">
                 {d.cta}
-              </button>
+              </BookingLink>
             </div>
           </div>
 
@@ -31,7 +27,7 @@ export default function Faq() {
               <details
                 key={f.q}
                 open={i === 0}
-                className="group bg-paper rounded-[28px] p-6 border border-rose/40 transition-all reveal-item"
+                className="group bg-paper rounded-[28px] p-6 border border-rose/40 transition-all reveal-item card-lift"
               >
                 <summary className="flex items-center justify-between cursor-pointer list-none select-none">
                   <h3 className="font-fraunces text-xl text-ink font-normal pr-4">{f.q}</h3>

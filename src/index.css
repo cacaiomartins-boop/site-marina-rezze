@@ -48,20 +48,48 @@ body {
   padding: 0 0.12em;
 }
 
-/* Animação de entrada (segura: só esconde depois que o JS marca reveal-ready) */
+/* Entrada ao rolar: só opacity + transform, 0.7s (marcado como reveal-ready pelo index.html) */
 html.reveal-ready .reveal-item {
   opacity: 0;
-  transform: translateY(38px);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 html.reveal-ready .reveal-item.revealed {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
+}
+/* pequeno escalonamento entre itens vizinhos */
+html.reveal-ready .reveal-item:nth-child(2) { transition-delay: 0.08s; }
+html.reveal-ready .reveal-item:nth-child(3) { transition-delay: 0.16s; }
+html.reveal-ready .reveal-item:nth-child(n + 4) { transition-delay: 0.24s; }
+
+/* Hover: botões sobem 2px; cartões sobem 4px (propriedade translate, independente do reveal) */
+.btn-lift {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.btn-lift:hover {
+  transform: translateY(-2px);
+}
+.card-lift {
+  transition: translate 0.3s ease;
+}
+html.reveal-ready .reveal-item.card-lift {
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), translate 0.3s ease;
+}
+@media (hover: hover) {
+  .card-lift:hover {
+    translate: 0 -4px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   html.reveal-ready .reveal-item {
     opacity: 1 !important;
     transform: none !important;
@@ -71,11 +99,21 @@ html.reveal-ready .reveal-item.revealed {
     transform: none !important;
     transition: none !important;
   }
+  .btn-lift,
+  .card-lift {
+    transition: none !important;
+  }
+  .btn-lift:hover {
+    transform: none;
+  }
+  .card-lift:hover {
+    translate: none;
+  }
 }
 
 .hero-img-zoom {
   transform: scale(1.06);
-  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .hero-loaded .hero-img-zoom {
   transform: scale(1);
@@ -105,8 +143,25 @@ section {
   scroll-margin-top: 88px;
 }
 
+/* foco visível (teclado): contorno escuro + halo claro, legível em fundos claros e escuros */
+:focus-visible {
+  outline: 2px solid #2b362d;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.85);
+}
+
 /* pontinhos verdes decorativos (atrás das fotos) */
 .dots-rose {
   background-image: radial-gradient(#a9b98f 1.8px, transparent 2px);
   background-size: 14px 14px;
+}
+
+/* área de toque ampliada (mín. 44px) sem mexer no layout visual */
+.tap {
+  position: relative;
+}
+.tap::after {
+  content: "";
+  position: absolute;
+  inset: -14px -8px;
 }

@@ -1,0 +1,14 @@
+{
+  "name": "Marina Rezze Barthelson | Psicóloga e Psicanalista",
+  "short_name": "Marina Rezze",
+  "description": "Psicóloga e psicanalista em Campinas e online.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F2EA",
+  "theme_color": "#4F6652",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

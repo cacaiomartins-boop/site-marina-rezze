@@ -4,7 +4,7 @@ import { Stars } from "./Icons";
 export default function Testimonials() {
   const d = clinic.testimonials;
   return (
-    <section id="depoimentos" className="py-[72px] md:py-[96px] bg-blush">
+    <section id="depoimentos" className="relative overflow-x-clip py-[72px] md:py-[96px] bg-blush">
       <div className="max-w-[1240px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4 prose-editorial reveal-item">
@@ -34,7 +34,7 @@ export default function Testimonials() {
                   {col.map((t) => (
                     <div
                       key={t.author}
-                      className="bg-paper rounded-[28px] p-7 border border-rose/40 shadow-soft reveal-item"
+                      className="bg-paper rounded-[28px] p-7 border border-rose/40 shadow-soft reveal-item card-lift"
                     >
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-rose text-4xl font-fraunces leading-none">“</span>

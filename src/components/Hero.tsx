@@ -1,5 +1,5 @@
 import { clinic } from "../data/clinic";
-import { openBooking } from "../lib/booking";
+import BookingLink from "./BookingLink";
 import { Stars, Pin, Monitor, Shield } from "./Icons";
 
 export default function Hero() {
@@ -13,6 +13,10 @@ export default function Hero() {
         <img
           src={clinic.images.hero}
           alt="Consultório acolhedor de Marina Rezze Barthelson em Campinas com poltrona, divã e estante de livros"
+          width={512}
+          height={384}
+          decoding="async"
+          {...{ fetchpriority: "high" }}
           className="hero-img-zoom w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#4F6652] via-[#4F6652]/85 to-[#4F6652]/25" />
@@ -30,17 +34,13 @@ export default function Hero() {
               <span className="italic text-blush-deep font-light">{h.titleEmphasis}</span>
               {h.titleEnd}
             </h1>
-            <p className="text-paper/80 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-[54ch]">
+            <p className="text-paper/85 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-[54ch]">
               {h.text}
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                type="button"
-                onClick={openBooking}
-                className="h-[52px] px-8 rounded-full bg-paper text-forest font-medium text-[15px] hover:bg-sand transition-colors text-center"
-              >
+              <BookingLink className="h-[52px] px-8 rounded-full bg-paper text-forest font-medium text-[15px] hover:bg-sand transition-colors text-center">
                 {h.cta}
-              </button>
+              </BookingLink>
               <a
                 href="#como-trabalho"
                 className="inline-flex items-center justify-center h-[52px] px-6 text-paper/90 hover:text-paper font-medium text-[15px] transition-colors group"
@@ -76,7 +76,7 @@ export default function Hero() {
                       href={clinic.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-rust hover:underline block leading-snug"
+                      className="tap text-xs text-rust hover:underline block leading-snug"
                     >
                       Rua Clóvis Beviláqua 185, sl 11 — Jd. Brasil ↗
                     </a>

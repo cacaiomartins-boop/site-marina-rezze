@@ -13,7 +13,7 @@ export default function TrustBar() {
     { icon: <Monitor className="w-5 h-5" />, label: "Teleconsulta", value: "Atendimento por Vídeo" },
   ];
   return (
-    <section className="bg-paper py-10 border-b border-rose/40">
+    <section className="overflow-x-clip bg-paper py-10 border-b border-rose/40">
       <div className="max-w-[1240px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {items.map((i) => (

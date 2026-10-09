@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { clinic } from "../data/clinic";
-import { openBooking } from "../lib/booking";
+import BookingLink from "./BookingLink";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +25,7 @@ export default function Header() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${headerCls}`}
     >
       <div className="max-w-[1240px] mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#topo" aria-label="Voltar ao início" className="group focus:outline-none">
+        <a href="#topo" className="group">
           <span className="block font-fraunces text-xl md:text-2xl font-normal tracking-tight group-hover:opacity-90 transition-opacity">
             {clinic.name}
           </span>
@@ -34,7 +34,7 @@ export default function Header() {
           </span>
         </a>
 
-        <nav className="hidden lg:flex items-center space-x-8 text-[14px] font-medium tracking-wide">
+        <nav aria-label="Principal" className="hidden lg:flex items-center space-x-8 text-[14px] font-medium tracking-wide">
           {clinic.nav.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-sage transition-colors">
               {l.label}
@@ -43,23 +43,21 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <button
-            type="button"
-            onClick={openBooking}
-            className={`h-[52px] px-7 rounded-full font-medium text-[15px] transition-colors duration-200 ${btnCls}`}
-          >
+          <BookingLink className={`h-[52px] px-7 rounded-full font-medium text-[15px] transition-colors duration-200 ${btnCls}`}>
             Agendar Consulta
-          </button>
+          </BookingLink>
         </div>
 
         <div className="lg:hidden flex items-center">
           <button
             type="button"
-            aria-label="Abrir menu de navegação"
+            aria-label={open ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
             onClick={() => setOpen((v) => !v)}
-            className="p-2 focus:outline-none"
+            className="p-2"
           >
-            <svg className="w-7 h-7 stroke-current" fill="none" strokeWidth="1.5" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" className="w-7 h-7 stroke-current" fill="none" strokeWidth="1.5" viewBox="0 0 24 24">
               <line x1="4" x2="20" y1="7" y2="7" />
               <line x1="4" x2="20" y1="12" y2="12" />
               <line x1="4" x2="20" y1="17" y2="17" />
@@ -69,7 +67,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-linen text-ink border-b border-rose/40 shadow-soft px-6 py-8">
+        <div id="menu-mobile" className="lg:hidden bg-linen text-ink border-b border-rose/40 shadow-soft px-6 py-8">
           <div className="flex flex-col space-y-6">
             {clinic.nav.map((l) => (
               <a
@@ -82,13 +80,9 @@ export default function Header() {
               </a>
             ))}
             <div className="pt-4 border-t border-rose/40">
-              <button
-                type="button"
-                onClick={openBooking}
-                className="w-full h-[52px] rounded-full bg-forest text-paper font-medium text-base hover:bg-moss transition-colors"
-              >
+              <BookingLink className="w-full h-[52px] rounded-full bg-forest text-paper font-medium text-base hover:bg-moss transition-colors">
                 Agendar Consulta
-              </button>
+              </BookingLink>
             </div>
           </div>
         </div>

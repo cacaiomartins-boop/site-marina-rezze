@@ -1,11 +1,11 @@
 import { clinic } from "../data/clinic";
-import { openBooking } from "../lib/booking";
+import BookingLink from "./BookingLink";
 import { Sparkle } from "./Icons";
 
 export default function About() {
   const d = clinic.about;
   return (
-    <section id="sobre" className="py-[72px] md:py-[96px] bg-blush">
+    <section id="sobre" className="relative overflow-x-clip py-[72px] md:py-[96px] bg-blush">
       <div className="max-w-[1240px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
           <div className="lg:col-span-5 reveal-item">
@@ -20,7 +20,10 @@ export default function About() {
                 <img
                   src={clinic.images.portrait}
                   alt="Retrato da Psicóloga e Psicanalista Marina Rezze Barthelson em seu consultório"
+                  width={384}
+                  height={512}
                   loading="lazy"
+                  decoding="async"
                   className="w-full aspect-[4/5] object-cover"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-paper/95 backdrop-blur-sm rounded-[22px] p-4 border border-rose/40 shadow-soft">
@@ -64,13 +67,9 @@ export default function About() {
                 ))}
               </div>
             </div>
-            <button
-              type="button"
-              onClick={openBooking}
-              className="h-[52px] px-8 rounded-full bg-forest text-paper font-medium text-[15px] hover:bg-moss transition-colors"
-            >
+            <BookingLink className="h-[52px] px-8 rounded-full bg-forest text-paper font-medium text-[15px] hover:bg-moss transition-colors">
               {d.cta}
-            </button>
+            </BookingLink>
           </div>
         </div>
       </div>

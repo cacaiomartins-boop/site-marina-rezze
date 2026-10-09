@@ -28,7 +28,10 @@ export default function Approach() {
                 <img
                   src={clinic.images.approach}
                   alt="Marina Rezze Barthelson em atendimento profissional"
+                  width={384}
+                  height={384}
                   loading="lazy"
+                  decoding="async"
                   className="w-full aspect-[4/5] object-cover"
                 />
                 </div>

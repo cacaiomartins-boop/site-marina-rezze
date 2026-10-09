@@ -41,8 +41,14 @@ export default function App() {
 
   return (
     <>
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-forest focus:px-5 focus:py-3 focus:text-paper"
+      >
+        Pular para o conteúdo
+      </a>
       <Header />
-      <main>
+      <main id="conteudo">
         <Hero />
         <TrustBar />
         <Divider />
@@ -61,9 +67,9 @@ export default function App() {
         <Faq />
         <Divider />
         <Contact />
-        <Footer />
+        <FloatingButton />
       </main>
-      <FloatingButton />
+      <Footer />
     </>
   );
 }

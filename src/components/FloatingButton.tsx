@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { openBooking } from "../lib/booking";
+import BookingLink from "./BookingLink";
 import { Calendar } from "./Icons";
 
 export default function FloatingButton() {
@@ -25,14 +25,10 @@ export default function FloatingButton() {
         visible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
     >
-      <button
-        type="button"
-        onClick={openBooking}
-        className="h-[56px] px-8 rounded-full bg-forest text-paper font-medium text-[15px] shadow-soft border border-sage/30 hover:bg-moss transition-all flex items-center gap-2"
-      >
+      <BookingLink className="h-[56px] px-8 rounded-full bg-forest text-paper font-medium text-[15px] shadow-soft border border-sage/30 hover:bg-moss gap-2">
         <Calendar />
         Agendar Consulta
-      </button>
+      </BookingLink>
     </div>
   );
 }

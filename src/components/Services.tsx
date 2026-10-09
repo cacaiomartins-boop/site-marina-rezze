@@ -1,5 +1,5 @@
 import { clinic } from "../data/clinic";
-import { openBooking } from "../lib/booking";
+import BookingLink from "./BookingLink";
 import { Pin, PinSimple, Monitor, Clock } from "./Icons";
 
 const icons = { pin: Pin, "pin-simple": PinSimple, monitor: Monitor } as const;
@@ -25,7 +25,7 @@ export default function Services() {
             return (
               <div
                 key={s.title}
-                className="bg-paper rounded-[28px] p-7 md:p-10 border border-rose/40 border-t-2 border-t-rose shadow-soft flex flex-col justify-between reveal-item"
+                className="bg-paper rounded-[28px] p-7 md:p-10 border border-rose/40 border-t-2 border-t-rose shadow-soft flex flex-col justify-between reveal-item card-lift"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs text-moss font-medium mb-4">
@@ -49,13 +49,9 @@ export default function Services() {
                 </div>
                 <div>
                   <div className="pt-6 border-t border-rose/40" />
-                  <button
-                    type="button"
-                    onClick={openBooking}
-                    className="w-full h-[52px] rounded-full bg-forest text-paper font-medium text-sm hover:bg-moss transition-colors"
-                  >
+                  <BookingLink className="w-full h-[52px] rounded-full bg-forest text-paper font-medium text-sm hover:bg-moss transition-colors">
                     {d.cta}
-                  </button>
+                  </BookingLink>
                 </div>
               </div>
             );
